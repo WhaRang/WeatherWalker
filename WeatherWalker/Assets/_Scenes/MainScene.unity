@@ -1073,7 +1073,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 855892445}
         m_TargetAssemblyTypeName: ControlPanelUI, Assembly-CSharp
-        m_MethodName: GamePauseButtonOnClick
+        m_MethodName: MainMenuExitButtonOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
