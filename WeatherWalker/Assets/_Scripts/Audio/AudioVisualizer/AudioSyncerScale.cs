@@ -10,7 +10,8 @@ public class AudioSyncerScale : AudioSyncer
 	{
 		base.OnUpdate();
 
-		if (isBeat) return;
+		if (isBeat) 
+			return;
 
 		transform.localScale = Vector3.Lerp(transform.localScale, restScale, RestSmoothTime * Time.deltaTime);
 	}

@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameStateController : MonoBehaviour
 {
+    public static GameStateController Instance;
+
     public enum GameState
     {
         None = 0,
@@ -11,22 +11,43 @@ public class GameStateController : MonoBehaviour
         Pause = 2
     }
 
-
     private GameState currentGameState = GameState.None;
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
+    private void Start()
+    {
+        PauseGame();
+    }
 
     public void StartGame()
     {
+        if (currentGameState == GameState.Main)
+            return;
+
         currentGameState = GameState.Main;
+        Debug.Log("Current game state: " + currentGameState);
     }
 
     public void ResumeGame()
     {
+        if (currentGameState == GameState.Main)
+            return;
+
         currentGameState = GameState.Main;
+        Debug.Log("Current game state: " + currentGameState);
     }
 
     public void PauseGame()
     {
+        if (currentGameState == GameState.Pause)
+            return;
+
         currentGameState = GameState.Pause;
+        Debug.Log("Current game state: " + currentGameState);
     }
 }
