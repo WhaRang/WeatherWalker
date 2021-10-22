@@ -4,7 +4,7 @@ public class ControlPanelUI : MonoBehaviour
 {
     public void MainMenuPlayButtonOnClick()
     {
-        GameStateController.Instance.StartGame();
+        GameStateController.Instance.ResumeGame();
     }
 
     public void MainMenuExitButtonOnClick()

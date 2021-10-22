@@ -26,10 +26,7 @@ public class GameStateController : MonoBehaviour
 
     public void StartGame()
     {
-        if (currentGameState == GameState.Main)
-            return;
-
-        currentGameState = GameState.Main;
+        currentGameState = GameState.Pause;
         Debug.Log("Current game state: " + currentGameState);
     }
 
@@ -39,6 +36,8 @@ public class GameStateController : MonoBehaviour
             return;
 
         currentGameState = GameState.Main;
+        AnimationControllerUI.Instance.CloseMainMenu();
+
         Debug.Log("Current game state: " + currentGameState);
     }
 
@@ -48,6 +47,8 @@ public class GameStateController : MonoBehaviour
             return;
 
         currentGameState = GameState.Pause;
+        AnimationControllerUI.Instance.OpenMainMenu();
+
         Debug.Log("Current game state: " + currentGameState);
     }
 }
