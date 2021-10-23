@@ -190,10 +190,10 @@ RectTransform:
   m_Father: {fileID: 515714191}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 2340, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &139216743
 CanvasRenderer:
@@ -856,7 +856,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 26169da8569b16e4e8d22be906cd5bfc, type: 3}
+    m_Font: {fileID: 12800000, guid: 87b0ece16e33fe64a856a51410d9f5b3, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -1316,7 +1316,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 26169da8569b16e4e8d22be906cd5bfc, type: 3}
+    m_Font: {fileID: 12800000, guid: 87b0ece16e33fe64a856a51410d9f5b3, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -1528,7 +1528,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 26169da8569b16e4e8d22be906cd5bfc, type: 3}
+    m_Font: {fileID: 12800000, guid: 87b0ece16e33fe64a856a51410d9f5b3, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -1613,6 +1613,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 379405400}
     m_Modifications:
+    - target: {fileID: 537980889603873872, guid: eb24f2a0e9fd6ee4a870d1a9901f8d61, type: 3}
+      propertyPath: mainMenuGO
+      value: 
+      objectReference: {fileID: 139216740}
     - target: {fileID: 537980889603873872, guid: eb24f2a0e9fd6ee4a870d1a9901f8d61, type: 3}
       propertyPath: mainMenuTransform
       value: 

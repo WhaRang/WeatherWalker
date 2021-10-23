@@ -14,13 +14,17 @@ public class AnimationControllerUI : MonoBehaviour
 
     public void OpenMainMenu()
     {
+        Vector3 newPos = new Vector3(0.0f, 0.0f, mainMenuTransform.position.z);
+
         MovingAnimations.Instance.MoveObjTo(mainMenuTransform.gameObject,
-            Vector3.zero, mainMenuAnimationDuration);
+            newPos, mainMenuAnimationDuration);
     }
 
     public void CloseMainMenu()
     {
+        Vector3 newPos = new Vector3(-Screen.width, 0.0f, 0.0f);
+
         MovingAnimations.Instance.MoveObjTo(mainMenuTransform.gameObject,
-            new Vector3(-Screen.width, 0.0f, 0.0f), mainMenuAnimationDuration);
+            mainMenuTransform.TransformPoint(newPos), mainMenuAnimationDuration);
     }
 }

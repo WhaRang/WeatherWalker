@@ -21,7 +21,7 @@ public class GameStateController : MonoBehaviour
 
     private void Start()
     {
-        PauseGame();
+        StartGame();
     }
 
     public void StartGame()

@@ -28,6 +28,9 @@ public class MovingAnimations : MonoBehaviour
 
             t += Time.deltaTime / seconds;
             obj.transform.position = Vector3.Lerp(startPos, endPos, Mathf.SmoothStep(0f, 1f, t));
+
+            // Debug.Log(obj.transform.position + " === " + endPos);
+
             yield return null;
         }
     }
