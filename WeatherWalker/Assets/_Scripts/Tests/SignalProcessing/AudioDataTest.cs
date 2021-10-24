@@ -36,8 +36,6 @@ public class AudioDataTest : MonoBehaviour
             Debug.Log("Peak average: " + peakAvg);
             Debug.Log("Average height: " + heightAvg);
             Debug.Log("DB value: " + dbValue);
-
-            //float valence = 
         }
     }
 
