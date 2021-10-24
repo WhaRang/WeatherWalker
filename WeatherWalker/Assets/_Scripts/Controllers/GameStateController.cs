@@ -4,6 +4,12 @@ public class GameStateController : MonoBehaviour
 {
     public static GameStateController Instance;
 
+    [SerializeField] private bool log = false;
+    [SerializeField] private AnimationControllerUI animationControllerUI;
+    [SerializeField] private AudioSequenceController audioSequenceController;
+
+    private bool isFirstTimeLaunch = true;
+
     public enum GameState
     {
         None = 0,
@@ -27,7 +33,10 @@ public class GameStateController : MonoBehaviour
     public void StartGame()
     {
         currentGameState = GameState.Pause;
-        Debug.Log("Current game state: " + currentGameState);
+        audioSequenceController.SequenceGameStartSounds();
+
+        if (log)
+            Debug.Log("Current game state: " + currentGameState);
     }
 
     public void ResumeGame()
@@ -36,9 +45,20 @@ public class GameStateController : MonoBehaviour
             return;
 
         currentGameState = GameState.Main;
-        AnimationControllerUI.Instance.CloseMainMenu();
 
-        Debug.Log("Current game state: " + currentGameState);
+        if (isFirstTimeLaunch)
+        {
+            audioSequenceController.SequenceFirstTimeLaunchSounds();
+            isFirstTimeLaunch = false;
+        }
+        else
+        {
+            audioSequenceController.SequenceGameResumeSounds();
+        }
+        animationControllerUI.CloseMainMenu();
+
+        if (log)
+            Debug.Log("Current game state: " + currentGameState);
     }
 
     public void PauseGame()
@@ -47,8 +67,11 @@ public class GameStateController : MonoBehaviour
             return;
 
         currentGameState = GameState.Pause;
-        AnimationControllerUI.Instance.OpenMainMenu();
 
-        Debug.Log("Current game state: " + currentGameState);
+        audioSequenceController.SequenceGamePauseSounds();
+        animationControllerUI.OpenMainMenu();
+
+        if (log)
+            Debug.Log("Current game state: " + currentGameState);
     }
 }
