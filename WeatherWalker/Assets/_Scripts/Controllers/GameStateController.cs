@@ -7,6 +7,7 @@ public class GameStateController : MonoBehaviour
     [SerializeField] private bool log = false;
     [SerializeField] private AnimationControllerUI animationControllerUI;
     [SerializeField] private AudioSequenceController audioSequenceController;
+    [SerializeField] private GetInferenceFromModel getInferenceFromModel;
 
     private bool isFirstTimeLaunch = true;
 
@@ -43,6 +44,10 @@ public class GameStateController : MonoBehaviour
     {
         if (currentGameState == GameState.Main)
             return;
+
+        // Remove!!
+        getInferenceFromModel.MakePrediction();
+        //
 
         currentGameState = GameState.Main;
 
