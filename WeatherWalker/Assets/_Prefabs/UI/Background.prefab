@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3336231849975439606}
   canvasGroup: {fileID: 3336231849975439609}
+  rectTransform: {fileID: 3336231849975439607}
   filledFromStart: 0
 --- !u!225 &3336231849975439609
 CanvasGroup:

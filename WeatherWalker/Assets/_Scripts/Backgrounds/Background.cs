@@ -7,10 +7,15 @@ public class Background : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private RectTransform rectTransform;
     [SerializeField] private bool filledFromStart;
+
+    public RectTransform RectTransform => rectTransform;
 
     private int fadeInAnimationHash;
     private int fadeOutAnimationHash;
+
+    private Vector3 startPos;
 
     private void Awake()
     {
@@ -21,6 +26,11 @@ public class Background : MonoBehaviour
             canvasGroup.alpha = 1.0f;
     }
 
+    private void Start()
+    {
+        startPos = transform.position;
+    }
+
     public void FadeIn()
     {
         animator.Play(fadeInAnimationHash);
@@ -29,5 +39,10 @@ public class Background : MonoBehaviour
     public void FadeOut()
     {
         animator.Play(fadeOutAnimationHash);
+    }
+
+    public void ResetToStartPos()
+    {
+        transform.position = startPos;
     }
 }

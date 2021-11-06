@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class GameStateController : MonoBehaviour
 {
-    public static GameStateController Instance;
+    public static GameStateController Instance { get; private set; }
 
     [SerializeField] private bool log = false;
     [SerializeField] private AnimationControllerUI animationControllerUI;
     [SerializeField] private AudioSequenceController audioSequenceController;
     [SerializeField] private GetInferenceFromModel getInferenceFromModel;
+    [SerializeField] private BackgroundController backgroundController;
 
     private bool isFirstTimeLaunch = true;
 
@@ -29,6 +30,35 @@ public class GameStateController : MonoBehaviour
     private void Start()
     {
         StartGame();
+    }
+
+    private void Update()
+    {
+        UpdateGame();
+    }
+
+    private void UpdateGame()
+    {
+        switch (currentGameState)
+        {
+            case GameState.Main:
+                UpdateMainGame();
+                break;
+
+            case GameState.Pause:
+                UpdatePausedGame();
+                break;
+        }
+    }
+
+    private void UpdatePausedGame()
+    {
+
+    }
+
+    private void UpdateMainGame()
+    {
+        backgroundController.UpdateController();
     }
 
     public void StartGame()
