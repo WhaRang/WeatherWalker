@@ -1726,7 +1726,7 @@ PrefabInstance:
       objectReference: {fileID: 139216741}
     - target: {fileID: 537980889603873872, guid: eb24f2a0e9fd6ee4a870d1a9901f8d61, type: 3}
       propertyPath: mainMenuAnimationDuration
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 537980889603873878, guid: eb24f2a0e9fd6ee4a870d1a9901f8d61, type: 3}
       propertyPath: m_Name
@@ -1902,6 +1902,18 @@ PrefabInstance:
     - target: {fileID: 834575142436077011, guid: 7bd3f024eb17e814b92abe1daf37e43c, type: 3}
       propertyPath: m_Name
       value: AudioSequenceController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499628755301260298, guid: 7bd3f024eb17e814b92abe1daf37e43c, type: 3}
+      propertyPath: audioFadeIn
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499628755301260298, guid: 7bd3f024eb17e814b92abe1daf37e43c, type: 3}
+      propertyPath: audioFadeOut
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499628755301260298, guid: 7bd3f024eb17e814b92abe1daf37e43c, type: 3}
+      propertyPath: audioPlayDelay
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7968650957282694969, guid: 7bd3f024eb17e814b92abe1daf37e43c, type: 3}
       propertyPath: m_RootOrder

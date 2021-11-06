@@ -45,10 +45,6 @@ public class GameStateController : MonoBehaviour
         if (currentGameState == GameState.Main)
             return;
 
-        // Remove!!
-        getInferenceFromModel.MakePrediction();
-        //
-
         currentGameState = GameState.Main;
 
         if (isFirstTimeLaunch)
