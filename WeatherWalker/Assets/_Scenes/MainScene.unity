@@ -336,6 +336,7 @@ Transform:
   - {fileID: 1783450335}
   - {fileID: 318661880}
   - {fileID: 3624496804311029568}
+  - {fileID: 796840579}
   m_Father: {fileID: 504299446}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -678,6 +679,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0194ebcd302b8194380a5cf162a207ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &796840578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796840579}
+  - component: {fileID: 796840580}
+  m_Layer: 0
+  m_Name: NNModelController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796840579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796840578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 379405400}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796840580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796840578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2694ce1a12cbb5649bcb7ae6897c8c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: ce5b2870eb901d2488fcea605c4deb68, type: 3}
+  modelAsset: {fileID: 5022602860645237092, guid: b2bcd947e08b2704bbc0343305d6a224, type: 3}
+  prediction:
+    predictedValue: 0
+    predicted: []
 --- !u!4 &855892444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 818396933958619814, guid: ffa14345b1050e3448cb68c0a913a1bd, type: 3}
@@ -1647,6 +1696,10 @@ PrefabInstance:
       propertyPath: animationControllerUI
       value: 
       objectReference: {fileID: 785060412}
+    - target: {fileID: 421499342547368387, guid: 463205eef0dbfa34aa13636dcdac53e4, type: 3}
+      propertyPath: getInferenceFromModel
+      value: 
+      objectReference: {fileID: 796840580}
     - target: {fileID: 421499342547368387, guid: 463205eef0dbfa34aa13636dcdac53e4, type: 3}
       propertyPath: audioSequenceController
       value: 
