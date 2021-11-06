@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AnimationControllerUI : MonoBehaviour
 {
-    [SerializeField] private Transform mainMenuTransform = null;
+    [SerializeField] private RectTransform mainMenuTransform = null;
     [SerializeField] private float mainMenuAnimationDuration = 0.0f;
 
     public void OpenMainMenu()
@@ -15,7 +15,7 @@ public class AnimationControllerUI : MonoBehaviour
 
     public void CloseMainMenu()
     {
-        Vector3 newPos = new Vector3(-Screen.width, 0.0f, 0.0f);
+        Vector3 newPos = new Vector3(-mainMenuTransform.rect.width, 0.0f, 0.0f);
 
         MovingAnimations.Instance.MoveObjTo(mainMenuTransform.gameObject,
             mainMenuTransform.TransformPoint(newPos), mainMenuAnimationDuration);

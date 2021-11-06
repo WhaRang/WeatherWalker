@@ -31,6 +31,8 @@ public class MovingAnimations : MonoBehaviour
 
             yield return null;
         }
+
+        obj.transform.position = endPos;
     }
 
     public void RotateObjTo(GameObject obj, Quaternion newRot, float seconds)
