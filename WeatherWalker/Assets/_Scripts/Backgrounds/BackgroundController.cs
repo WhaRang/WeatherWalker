@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class BackgroundController : MonoBehaviour
 {
+    [SerializeField] private MusicGenre musicGenre;
     [SerializeField] private List<Background> backgrounds;
     [SerializeField] private float backgroundMovingSpeed = 0.0f;
 
+    public MusicGenre MusicGenre => musicGenre;
+
+    // To REMOVE
     [SerializeField] private float rectTransformPosX = 0.0f;
     [SerializeField] private float backgroundEndPosX = 0.0f;
 

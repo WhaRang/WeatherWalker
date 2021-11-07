@@ -8,7 +8,8 @@ public class GameStateController : MonoBehaviour
     [SerializeField] private AnimationControllerUI animationControllerUI;
     [SerializeField] private AudioSequenceController audioSequenceController;
     [SerializeField] private GetInferenceFromModel getInferenceFromModel;
-    [SerializeField] private BackgroundController backgroundController;
+    [SerializeField] private BackgroundControllersSequencer backgroundControllersSequencer;
+    [SerializeField] private MusicGenre musicGenreToStart;
 
     private bool isFirstTimeLaunch = true;
 
@@ -58,13 +59,19 @@ public class GameStateController : MonoBehaviour
 
     private void UpdateMainGame()
     {
-        backgroundController.UpdateController();
+        int index = (int)musicGenreToStart;
+        index--;
+        backgroundControllersSequencer.UpdateControllersSequencer(index);
     }
 
     public void StartGame()
     {
         currentGameState = GameState.Pause;
         audioSequenceController.SequenceGameStartSounds();
+
+        int index = (int)musicGenreToStart;
+        index--;
+        backgroundControllersSequencer.ActivateControllerNeeded(index);
 
         if (log)
             Debug.Log("Current game state: " + currentGameState);
