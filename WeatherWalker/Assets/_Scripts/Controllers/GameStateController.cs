@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class GameStateController : MonoBehaviour
 {
-    public static GameStateController Instance;
+    public static GameStateController Instance { get; private set; }
 
     [SerializeField] private bool log = false;
     [SerializeField] private AnimationControllerUI animationControllerUI;
     [SerializeField] private AudioSequenceController audioSequenceController;
     [SerializeField] private GetInferenceFromModel getInferenceFromModel;
+    [SerializeField] private BackgroundControllersSequencer backgroundControllersSequencer;
+    [SerializeField] private MusicGenre musicGenreToStart;
 
     private bool isFirstTimeLaunch = true;
 
@@ -31,10 +33,45 @@ public class GameStateController : MonoBehaviour
         StartGame();
     }
 
+    private void Update()
+    {
+        UpdateGame();
+    }
+
+    private void UpdateGame()
+    {
+        switch (currentGameState)
+        {
+            case GameState.Main:
+                UpdateMainGame();
+                break;
+
+            case GameState.Pause:
+                UpdatePausedGame();
+                break;
+        }
+    }
+
+    private void UpdatePausedGame()
+    {
+
+    }
+
+    private void UpdateMainGame()
+    {
+        int index = (int)musicGenreToStart;
+        index--;
+        backgroundControllersSequencer.UpdateControllersSequencer(index);
+    }
+
     public void StartGame()
     {
         currentGameState = GameState.Pause;
         audioSequenceController.SequenceGameStartSounds();
+
+        int index = (int)musicGenreToStart;
+        index--;
+        backgroundControllersSequencer.ActivateControllerNeeded(index);
 
         if (log)
             Debug.Log("Current game state: " + currentGameState);
@@ -44,10 +81,6 @@ public class GameStateController : MonoBehaviour
     {
         if (currentGameState == GameState.Main)
             return;
-
-        // Remove!!
-        getInferenceFromModel.MakePrediction();
-        //
 
         currentGameState = GameState.Main;
 
