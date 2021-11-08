@@ -3,22 +3,24 @@ using UnityEngine;
 
 public class BackgroundController : MonoBehaviour
 {
+    private static readonly float DELTA_POS_X_PART = 0.025f;
+
     [SerializeField] private MusicGenre musicGenre;
     [SerializeField] private List<Background> backgrounds;
+    [SerializeField] private RectTransform rectTransform;
     [SerializeField] private float backgroundMovingSpeed = 0.0f;
 
     public MusicGenre MusicGenre => musicGenre;
 
-    // To REMOVE
-    [SerializeField] private float rectTransformPosX = 0.0f;
-    [SerializeField] private float backgroundEndPosX = 0.0f;
-
+    private float backgroundEndPosX = 0.0f;
+    private float deltaEndPosX = 0.0f;
     private int currBackgroundIndex = 0;
     private int prevBackgroundIndex = 0;
 
     private void Start()
     {
         CalculateBackgroundEndPosX();
+        deltaEndPosX = DELTA_POS_X_PART * backgrounds[currBackgroundIndex].RectTransform.rect.width;
     }
 
     public void UpdateController()
@@ -51,9 +53,7 @@ public class BackgroundController : MonoBehaviour
 
     private void CheckBackgroundPos()
     {
-        rectTransformPosX = backgrounds[currBackgroundIndex].RectTransform.anchoredPosition.x;
-
-        if (backgrounds[currBackgroundIndex].RectTransform.anchoredPosition.x <= backgroundEndPosX)
+        if (backgrounds[currBackgroundIndex].RectTransform.anchoredPosition.x - deltaEndPosX <= backgroundEndPosX)
         {
             backgrounds[currBackgroundIndex].FadeOut();
 
@@ -73,6 +73,6 @@ public class BackgroundController : MonoBehaviour
     private void CalculateBackgroundEndPosX()
     {
         backgroundEndPosX = backgrounds[currBackgroundIndex].RectTransform.anchoredPosition.x
-            - (backgrounds[currBackgroundIndex].RectTransform.rect.width - Screen.width);
+            - (backgrounds[currBackgroundIndex].RectTransform.rect.width - rectTransform.rect.width);
     }
 }

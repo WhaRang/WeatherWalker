@@ -2400,8 +2400,11 @@ MonoBehaviour:
   - {fileID: 1545566235}
   - {fileID: 165779101}
   - {fileID: 1859027526}
+  rectTransform: {fileID: 606295007}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &606295009
 CanvasRenderer:
@@ -2470,8 +2473,11 @@ MonoBehaviour:
   - {fileID: 1567713670}
   - {fileID: 2006497844}
   - {fileID: 165357227}
+  rectTransform: {fileID: 685018597}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &685018599
 CanvasRenderer:
@@ -3037,8 +3043,11 @@ MonoBehaviour:
   - {fileID: 1886738935}
   - {fileID: 143707556}
   - {fileID: 924512907}
+  rectTransform: {fileID: 891111763}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &891111765
 CanvasRenderer:
@@ -3530,8 +3539,11 @@ MonoBehaviour:
   - {fileID: 1104977657}
   - {fileID: 891184010}
   - {fileID: 1240651}
+  rectTransform: {fileID: 945163267}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &945163269
 CanvasRenderer:
@@ -4734,8 +4746,11 @@ MonoBehaviour:
   - {fileID: 902849197}
   - {fileID: 111648180}
   - {fileID: 854297535}
+  rectTransform: {fileID: 1234540638}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &1234540640
 CanvasRenderer:
@@ -5035,8 +5050,11 @@ MonoBehaviour:
   - {fileID: 1660275264}
   - {fileID: 979544548}
   - {fileID: 758624546}
+  rectTransform: {fileID: 1288766999}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &1288767001
 CanvasRenderer:
@@ -5317,8 +5335,11 @@ MonoBehaviour:
   - {fileID: 129816547}
   - {fileID: 775565093}
   - {fileID: 374079399}
+  rectTransform: {fileID: 1388774274}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &1388774276
 CanvasRenderer:
@@ -5387,8 +5408,11 @@ MonoBehaviour:
   - {fileID: 1942652116}
   - {fileID: 396251138}
   - {fileID: 313259603}
+  rectTransform: {fileID: 1401848116}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &1401848118
 CanvasRenderer:
@@ -6185,8 +6209,11 @@ MonoBehaviour:
   - {fileID: 1249862090}
   - {fileID: 1113257321}
   - {fileID: 2046265899}
+  rectTransform: {fileID: 1779207646}
   backgroundMovingSpeed: 1
   rectTransformPosX: 0
+  screenWidth: 0
+  rectWidth: 0
   backgroundEndPosX: 0
 --- !u!222 &1779207648
 CanvasRenderer:
@@ -7391,7 +7418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 421499342547368387, guid: 463205eef0dbfa34aa13636dcdac53e4, type: 3}
       propertyPath: musicGenreToStart
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 421499342547368387, guid: 463205eef0dbfa34aa13636dcdac53e4, type: 3}
       propertyPath: backgroundController
