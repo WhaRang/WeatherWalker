@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class ControlPanelUI : MonoBehaviour
 {
+    [SerializeField] private PathAudioImporter audioImporter;
+
     public void MainMenuPlayButtonOnClick()
     {
-        GameStateController.Instance.ResumeGame();
+        if (MainMenuBusController.IsGameAudioLoaded)
+            GameStateController.Instance.ResumeGame();
+        else
+            Debug.Log("Game audio is not loaded");
     }
 
     public void MainMenuExitButtonOnClick()
@@ -15,5 +20,10 @@ public class ControlPanelUI : MonoBehaviour
     public void GamePauseButtonOnClick()
     {
         GameStateController.Instance.PauseGame();
+    }
+
+    public void MainMenuImportAudioButtonOnClick()
+    {
+        audioImporter.Import();
     }
 }
