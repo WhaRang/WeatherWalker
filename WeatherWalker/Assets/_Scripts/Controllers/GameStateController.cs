@@ -16,8 +16,9 @@ public class GameStateController : MonoBehaviour
     public enum GameState
     {
         None = 0,
-        Main = 1,
-        Pause = 2
+        Start = 1,
+        Main = 2,
+        Pause = 3
     }
 
     private GameState currentGameState = GameState.None;
@@ -42,6 +43,10 @@ public class GameStateController : MonoBehaviour
     {
         switch (currentGameState)
         {
+            case GameState.Start:
+                UpdateGameStart();
+                break;
+
             case GameState.Main:
                 UpdateMainGame();
                 break;
@@ -52,10 +57,9 @@ public class GameStateController : MonoBehaviour
         }
     }
 
-    private void UpdatePausedGame()
-    {
+    private void UpdateGameStart() { }
 
-    }
+    private void UpdatePausedGame() { }
 
     private void UpdateMainGame()
     {
@@ -66,12 +70,20 @@ public class GameStateController : MonoBehaviour
 
     public void StartGame()
     {
-        currentGameState = GameState.Pause;
+        currentGameState = GameState.Start;
         audioSequenceController.SequenceGameStartSounds();
 
         int index = (int)musicGenreToStart;
         index--;
         backgroundControllersSequencer.ActivateControllerNeeded(index);
+
+        if (log)
+            Debug.Log("Current game state: " + currentGameState);
+    }
+
+    public void EndGame()
+    {
+        currentGameState = GameState.Start;
 
         if (log)
             Debug.Log("Current game state: " + currentGameState);
