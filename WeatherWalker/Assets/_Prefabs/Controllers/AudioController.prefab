@@ -99,7 +99,7 @@ MonoBehaviour:
   volumeRandomization: 0
   initialPitch: 1
   pitchRandomization: 0
-  loop: 1
+  loop: 0
   playlist: 0
 --- !u!1 &1975398493443993340
 GameObject:

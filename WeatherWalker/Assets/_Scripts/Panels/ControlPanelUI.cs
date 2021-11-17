@@ -43,8 +43,7 @@ public class ControlPanelUI : MonoBehaviour
 
     public void MainMenuImportAudioButtonOnClick()
     {
-        if (!MainMenuBusController.IsGameAudioLoaded)
-            audioImporter.Import();
+        audioImporter.Import();
     }
 
     public void GamePauseButtonOnClick()

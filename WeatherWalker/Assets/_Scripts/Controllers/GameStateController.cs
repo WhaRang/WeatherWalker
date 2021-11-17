@@ -28,7 +28,7 @@ public class GameStateController : MonoBehaviour
         Pause = 3
     }
 
-    private GameState currentGameState = GameState.None;
+    public GameState CurrentGameState { get; private set; } = GameState.None;
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class GameStateController : MonoBehaviour
 
     private void UpdateGame()
     {
-        switch (currentGameState)
+        switch (CurrentGameState)
         {
             case GameState.Start:
                 UpdateGameStart();
@@ -80,7 +80,7 @@ public class GameStateController : MonoBehaviour
 
     public void StartGame()
     {
-        currentGameState = GameState.Start;
+        CurrentGameState = GameState.Start;
         audioSequenceController.SequenceGameStartSounds();
 
         int index = (int)musicGenreToStart;
@@ -88,23 +88,25 @@ public class GameStateController : MonoBehaviour
         backgroundControllersSequencer.ActivateControllerNeeded(index);
 
         if (log)
-            Debug.Log("Current game state: " + currentGameState);
+            Debug.Log("Current game state: " + CurrentGameState);
     }
 
     public void EndGame()
     {
-        currentGameState = GameState.Start;
+        PauseGame();
+
+        CurrentGameState = GameState.Start;
 
         if (log)
-            Debug.Log("Current game state: " + currentGameState);
+            Debug.Log("Current game state: " + CurrentGameState);
     }
 
     public void ResumeGame()
     {
-        if (currentGameState == GameState.Main)
+        if (CurrentGameState == GameState.Main)
             return;
 
-        currentGameState = GameState.Main;
+        CurrentGameState = GameState.Main;
         characterAnimator.SetTrigger(characterWalkAnimationHash);
 
         if (isFirstTimeLaunch)
@@ -119,21 +121,21 @@ public class GameStateController : MonoBehaviour
         animationControllerUI.CloseMainMenu();
 
         if (log)
-            Debug.Log("Current game state: " + currentGameState);
+            Debug.Log("Current game state: " + CurrentGameState);
     }
 
     public void PauseGame()
     {
-        if (currentGameState == GameState.Pause)
+        if (CurrentGameState == GameState.Pause)
             return;
 
-        currentGameState = GameState.Pause;
+        CurrentGameState = GameState.Pause;
         characterAnimator.SetTrigger(characterIdleAnimationHash);
 
         audioSequenceController.SequenceGamePauseSounds();
         animationControllerUI.OpenMainMenu();
 
         if (log)
-            Debug.Log("Current game state: " + currentGameState);
+            Debug.Log("Current game state: " + CurrentGameState);
     }
 }
