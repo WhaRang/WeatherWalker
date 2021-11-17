@@ -43,3 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11a3143057febd4cacbe81d61025021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
+  animationControllerUI: {fileID: 0}
+  audioSequenceController: {fileID: 0}
+  getInferenceFromModel: {fileID: 0}
+  backgroundControllersSequencer: {fileID: 0}
+  characterAnimator: {fileID: 0}
+  musicGenreToStart: 2
