@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2165509363714383692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2165509363714383694}
+  - component: {fileID: 2165509363714383693}
+  m_Layer: 0
+  m_Name: AverageFemaleVariant_04Scale_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2165509363714383694
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165509363714383692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2165509363714383693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165509363714383692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1768596db1fd2ea4e8001beb1089328c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ageNumber: 0
+  sex: 0
+  hairStyle: {fileID: 21300000, guid: a1c5ced1c0d51cb41983038a06a6731f, type: 3}
+  hatStyle: {fileID: 21300000, guid: b416230d7f0adf54b9a2d111423b9412, type: 3}
+  hatColor: {r: 1, g: 1, b: 1, a: 1}
+  mustageStyle: {fileID: 21300000, guid: 433ebca7812ecfd45a84cf671e89879f, type: 3}
+  eyewearStyle: {fileID: 0}
+  eyewearColor: {r: 1, g: 1, b: 1, a: 1}
+  innerBodyStyle: {fileID: 21300000, guid: d50525fefa5d01645989de67e0ef3f02, type: 3}
+  shoesStyle: {fileID: 21300006, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  toeStyle: {fileID: 21300014, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  leftInner: {fileID: 21300000, guid: 77c66c58b06364141a6a74e359db82b2, type: 3}
+  leftInnerColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+  rightInner: {fileID: 21300000, guid: 77c66c58b06364141a6a74e359db82b2, type: 3}
+  rightInnerColor: {r: 1, g: 1, b: 1, a: 1}
+  innerBodyColor: {r: 1, g: 1, b: 1, a: 1}
+  wearShirt: 1
+  wearSkirt: 1
+  wearCoat: 1
+  armCover: 2
+  legCover: 2
+  size: 1
+  scale: 1
+  sortingLayerName: Default
+  sortingOrders: []
+  faceRenderer: {fileID: 0}
+  hatRenderer: {fileID: 0}
+  eyewearRenderer: {fileID: 0}
+  hairRenderer: {fileID: 0}
+  mustageRenderer: {fileID: 0}
+  bodyRenderer: {fileID: 0}
+  head: {fileID: 0}
+  neck: {fileID: 0}
+  flank: {fileID: 0}
+  shoulder: {fileID: 0}
+  hip: {fileID: 0}
+  breasts: {fileID: 0}
+  belly: {fileID: 0}
+  armUpper: {fileID: 0}
+  armLower: {fileID: 0}
+  hand: {fileID: 0}
+  leftHand: {fileID: 0}
+  pelvis: {fileID: 0}
+  skirt: {fileID: 0}
+  coat: {fileID: 0}
+  legUpper: {fileID: 0}
+  legLower: {fileID: 0}
+  foot: {fileID: 0}
+  skinColor: {r: 1, g: 0.8490631, b: 0.7877358, a: 1}
+  hairColor: {r: 0.6132076, g: 0.31943193, b: 0.112807065, a: 1}
+  shirtColor: {r: 0.5188679, g: 0.21293165, b: 0.21293165, a: 1}
+  pantColor: {r: 0.14519022, g: 0.14449094, b: 0.16037738, a: 1}
+  sleeveColor: {r: 1, g: 1, b: 1, a: 1}
+  innerSleeveColor: {r: 1, g: 1, b: 1, a: 1}
+  shoesColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
+  gloveColor: {r: 0.5283019, g: 0.4194359, b: 0.36632255, a: 1}
+  grayHairColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+  differentSleeve: 0
+  innerSleeve: 0
+  gloves: 2
+  glovesWrap: 0.5
+  shoesWrap: 0.5
+  minSize: 1
+  maxSize: 1.05
+  age: 4
+  height: 0.5
+  width: 0.5
+  fatness: 0.25
+  bellyHeight: 0
+  breastsHeight: 0.754
+  shoulderHeight: 0.75
+  hipWidth: 0.25
+  faceHeight: 0.5
+  faceWidth: 0.5
+  maleFace: {fileID: 0}
+  femaleFace: {fileID: 0}
+  maleBody: {fileID: 0}
+  femaleBody: {fileID: 0}
+  floor: {fileID: 0}
+  perspectiveHandle: {fileID: 0}
+  sittingLevelTransform: {fileID: 0}
+  editor: {fileID: 0}
+  simulateGround: 1
+  simulatePerspective: 1
+  perspective: 0
+  perspectiveArms: 0
+  innerPart: {fileID: 0}
+  innerPartContainer: {fileID: 0}
+  generator: {fileID: 0}
+  bodySide: 1
+  male: 0
+  female: 1
+  teen: 0
+  adult: 1
+  middleAge: 1
+  old: 1
+  minScale: 0.35
+  maxScale: 0.45
+  minActualSize: 1
+  maxActualSize: 1.05
+  minBodyWidth: 0.38
+  maxBodyWidth: 0.62
+  minBodyHeight: 0.2
+  maxBodyHeight: 0.3
+  minFaceWidth: 0.38
+  maxFaceWidth: 0.62
+  minFaceHeight: 0.38
+  maxFaceHeight: 0.62
+  minShoulder: 0.62
+  maxShoulder: 0.88
+  minBelly: 0
+  maxBelly: 0
+  minHip: 0.12
+  maxHip: 0.38
+  minFatness: 0.12
+  maxFatness: 0.38
+  minBreasts: 1
+  maxBreasts: 1
+  maleFaces:
+  - {fileID: 21300016, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  maleBodies:
+  - {fileID: 21300004, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  femaleFaces:
+  - {fileID: 21300020, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  femaleBodies:
+  - {fileID: 21300018, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  headwears:
+  - {fileID: 21300000, guid: b416230d7f0adf54b9a2d111423b9412, type: 3}
+  - {fileID: 21300000, guid: bd4c3db4224dc37459ce5bc7d17d3731, type: 3}
+  - {fileID: 21300000, guid: 5df354169360528438bd2ba17741cfd7, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  headwearColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  eyewears:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 8302b519a6cda0c4f8aaf93173d35620, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  eyewearColors:
+  - {r: 0, g: 0, b: 0, a: 1}
+  mustages:
+  - {fileID: 21300000, guid: 0e6cb4d7680c2fb42bc3370a87cde17f, type: 3}
+  - {fileID: 21300000, guid: 8dcce33079aebf94cb696381cedd6acb, type: 3}
+  - {fileID: 21300000, guid: be65ba8752066e246ae8814904479f93, type: 3}
+  - {fileID: 21300000, guid: 783e36df0b6c981498f4046ab0ba2ad2, type: 3}
+  - {fileID: 21300000, guid: 66c612febeeac754d9b56699476385ed, type: 3}
+  - {fileID: 21300000, guid: 58c6b6e507d3b1d4facef3aa891e1d8a, type: 3}
+  - {fileID: 21300000, guid: 433ebca7812ecfd45a84cf671e89879f, type: 3}
+  - {fileID: 21300000, guid: 17b25daebd680ea4d8d3b92cea88861a, type: 3}
+  - {fileID: 0}
+  hairs:
+  - {fileID: 21300000, guid: 9e02bd663bf965d4caee66d5a7ce2fa8, type: 3}
+  - {fileID: 21300000, guid: 7aa91b428b9d121458e13f9e599cba9d, type: 3}
+  - {fileID: 21300000, guid: 9eceea8dbd14a9242943b7b75bc8508b, type: 3}
+  - {fileID: 21300000, guid: 96524e368021e0c488a12cb03e8d1e1e, type: 3}
+  - {fileID: 21300000, guid: 326ee4b832af5154f85c303a27111b5e, type: 3}
+  - {fileID: 21300000, guid: 5c7fe556bdb51ef4eb30675f268a5fa1, type: 3}
+  - {fileID: 21300000, guid: d5dc4befdf9d2be41983df12f1ae2280, type: 3}
+  - {fileID: 21300000, guid: fc089803d38ecba498afedfef7d80e1f, type: 3}
+  - {fileID: 21300000, guid: bb6e6c4798f48b840b42bbc89723aa63, type: 3}
+  - {fileID: 21300000, guid: a8971744f97c53742b0f21f973fe5722, type: 3}
+  skinColors: []
+  hairColors: []
+  upperClothColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  innerSleeveColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  sleeveColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  glovesColors: []
+  pantColors: []
+  shoesColors: []
+  includeSkinPalette: 1
+  includeShirtPalette: 1
+  includePantPalette: 1
+  includeShoesPalette: 1
+  includeGlovesPalette: 1
+  includeHairPalette: 1
+  includeGrayHairPalette: 0
+  includeSleevePalette: 0
+  includeInnerSleevePalette: 0
+  includeInnerPartPalette: 1
+  innerParts:
+  - {fileID: 21300000, guid: 3940297d7f76e01458b0c99036231d28, type: 3}
+  - {fileID: 21300000, guid: 4ffa00d9090b30d42b85e40babf238f8, type: 3}
+  innerPartColors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  grayHairColors:
+  - {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+  fullArms: 1
+  halfArms: 0
+  noArms: 0
+  fullGloves: 1
+  halfGloves: 1
+  noGloves: 1
+  fullLeg: 1
+  halfLeg: 0
+  shirtOn: 0
+  vest: 2
+  innerSleeveOption: 2
+  longCoat: 1
+  skirtOn: 2
+  minSkirtHeight: 0.5
+  maxSkirtHeight: 0.9
+  minSkirtRadius: 11
+  maxSkirtRadius: 90
+  minCoatHeight: 0
+  maxCoatHeight: 0.8
+  minCoatRadius: 14
+  maxCoatRadius: 90
+  minGlovesWrap: 0
+  maxGlovesWrap: 0.8
+  minShoesWrap: 0
+  maxShoesWrap: 0.8
+  shoes:
+  - {fileID: 21300006, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  toes:
+  - {fileID: 21300014, guid: ec8e8b67cda8b694d8ac1951d68b61bb, type: 3}
+  innerShirtLayers:
+  - innerShirts:
+    - sprite: {fileID: 0}
+      colors: []
+      includeDyeColors: 1
+    - sprite: {fileID: 21300000, guid: d7adb20a3a5eabd4c8280d9d94d1c1c6, type: 3}
+      colors:
+      - {r: 0.6981132, g: 0.1284265, b: 0.1284265, a: 1}
+      includeDyeColors: 1
+  - innerShirts:
+    - sprite: {fileID: 21300000, guid: cca1f6a20f6c52547a108dfc2dca78a8, type: 3}
+      colors:
+      - {r: 0.19691174, g: 0.20420901, b: 0.23584908, a: 1}
+      includeDyeColors: 1
+    - sprite: {fileID: 0}
+      colors: []
+      includeDyeColors: 1

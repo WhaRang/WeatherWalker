@@ -17,7 +17,6 @@ public class CharacterUIHolder : MonoBehaviour
     private void FixCharacterPosition()
     {
         Vector3 worldPos = transform.TransformPoint(Vector3.zero);
-        Debug.Log(worldPos);
-        character.transform.position = worldPos; // Camera.main.ScreenToWorldPoint(worldPos);
+        character.transform.position = worldPos;
     }
 }
