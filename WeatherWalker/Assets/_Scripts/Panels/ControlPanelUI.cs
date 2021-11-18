@@ -28,6 +28,14 @@ public class ControlPanelUI : MonoBehaviour
         }
     }
 
+    public void ResetMainMenuAudioImpotUI()
+    {
+        MainMenuBusController.IsGameAudioLoadingStarted = false;
+        MainMenuBusController.IsGameAudioLoaded = false;
+        audioImportLoadingBarText.text = MainMenuBusController.NO_AUDIO_IMPORTED;
+        audioImportLoadingBar.fillAmount = 0.0f;
+    }
+
     public void MainMenuPlayButtonOnClick()
     {
         if (MainMenuBusController.IsGameAudioLoaded)
@@ -43,6 +51,7 @@ public class ControlPanelUI : MonoBehaviour
 
     public void MainMenuImportAudioButtonOnClick()
     {
+        ResetMainMenuAudioImpotUI();
         audioImporter.Import();
     }
 

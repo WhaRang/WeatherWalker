@@ -6,6 +6,7 @@ public class GameStateController : MonoBehaviour
 
     [SerializeField] private bool log = false;
     [SerializeField] private AnimationControllerUI animationControllerUI;
+    [SerializeField] private ControlPanelUI controlPanelUI;
     [SerializeField] private AudioSequenceController audioSequenceController;
     [SerializeField] private GetInferenceFromModel getInferenceFromModel;
     [SerializeField] private BackgroundControllersSequencer backgroundControllersSequencer;
@@ -96,6 +97,9 @@ public class GameStateController : MonoBehaviour
         PauseGame();
 
         CurrentGameState = GameState.Start;
+        isFirstTimeLaunch = true;
+
+        controlPanelUI.ResetMainMenuAudioImpotUI();
 
         if (log)
             Debug.Log("Current game state: " + CurrentGameState);
