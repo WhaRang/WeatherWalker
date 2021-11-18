@@ -8,8 +8,10 @@ public class AudioController : MonoBehaviour
     [SerializeField] private bool log;
     [SerializeField] private AudioTrack[] tracks;
 
-    private Hashtable audioTable;
+    public Hashtable AudioTable { get; private set; }
+
     private Hashtable jobTable;
+
 
     private void Awake()
     {
@@ -82,15 +84,15 @@ public class AudioController : MonoBehaviour
         if (jobTable.ContainsKey(type))
             return true;
 
-        AudioTrack track = (AudioTrack)audioTable[type];
+        AudioTrack track = (AudioTrack)AudioTable[type];
         if (track.Source.isPlaying)
             return true;
 
         foreach (DictionaryEntry entry in jobTable)
         {
             AudioType audioType = (AudioType)entry.Key;
-            AudioTrack audioTrackInUse = (AudioTrack)audioTable[audioType];
-            AudioTrack audioTrackNeeded = (AudioTrack)audioTable[type];
+            AudioTrack audioTrackInUse = (AudioTrack)AudioTable[audioType];
+            AudioTrack audioTrackNeeded = (AudioTrack)AudioTable[type];
 
             if (audioTrackInUse.Source == audioTrackNeeded.Source)
                 return true;
@@ -116,7 +118,7 @@ public class AudioController : MonoBehaviour
 
     private void AddJob(AudioJob job)
     {
-        if (!audioTable.ContainsKey(job.Type))
+        if (!AudioTable.ContainsKey(job.Type))
             return;
 
         RemoveConflictingJobs(job.Type);
@@ -135,7 +137,7 @@ public class AudioController : MonoBehaviour
         else
             yield return new WaitForSeconds(job.Delay);
 
-        AudioTrack track = (AudioTrack)audioTable[job.Type];
+        AudioTrack track = (AudioTrack)AudioTable[job.Type];
         foreach (AudioObject obj in track.AudioObjects)
         {
             if (obj.Type == job.Type)
@@ -235,8 +237,8 @@ public class AudioController : MonoBehaviour
         foreach (DictionaryEntry entry in jobTable)
         {
             AudioType audioType = (AudioType)entry.Key;
-            AudioTrack audioTrackInUse = (AudioTrack)audioTable[audioType];
-            AudioTrack audioTrackNeeded = (AudioTrack)audioTable[type];
+            AudioTrack audioTrackInUse = (AudioTrack)AudioTable[audioType];
+            AudioTrack audioTrackNeeded = (AudioTrack)AudioTable[type];
 
             if (audioTrackInUse.Source == audioTrackNeeded.Source)
                 conflictAudio = audioType;
@@ -269,17 +271,17 @@ public class AudioController : MonoBehaviour
 
     private void ConfigureAudioTable()
     {
-        audioTable = new Hashtable();
+        AudioTable = new Hashtable();
 
         foreach (AudioTrack track in tracks)
         {
             foreach (AudioObject obj in track.AudioObjects)
             {
-                if (audioTable.ContainsKey(obj.Type))
+                if (AudioTable.ContainsKey(obj.Type))
                     LogWarning("[" + obj.Type + "]" + "has already been registered");
                 else
                 {
-                    audioTable.Add(obj.Type, track);
+                    AudioTable.Add(obj.Type, track);
                     Log("Registered audio [" + obj.Type + "]");
                 }
             }

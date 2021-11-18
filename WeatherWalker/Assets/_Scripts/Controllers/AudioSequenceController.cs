@@ -9,6 +9,32 @@ public class AudioSequenceController : MonoBehaviour
     private AudioType[] defaultStopExceptions = new AudioType[] { AudioType.ST_Game, AudioType.ST_MainMenu };
     private AudioType[] defaultResumePauseAudio = new AudioType[] { };
 
+    private AudioTrack stGameAudioTrack;
+
+    private void Start()
+    {
+        stGameAudioTrack = (AudioTrack)AudioController.Instance.AudioTable[AudioType.ST_Game];
+    }
+
+    private void Update()
+    {
+        if (CheckGameSoundtrackEndCondition())
+            GameSoundtrackEnded();
+    }
+
+    private bool CheckGameSoundtrackEndCondition()
+    {
+        return stGameAudioTrack.Source.clip != null
+            && stGameAudioTrack.Source != null
+            && Mathf.Approximately(stGameAudioTrack.Source.time, stGameAudioTrack.Source.clip.length)
+            && GameStateController.Instance.CurrentGameState == GameStateController.GameState.Main;
+    }
+
+    private void GameSoundtrackEnded()
+    {
+        GameStateController.Instance.EndGame();
+    }
+
     public void SequenceGamePauseSounds()
     {
         PauseAudioNeeded();
@@ -29,7 +55,6 @@ public class AudioSequenceController : MonoBehaviour
     {
         AudioController.Instance.PauseAudio(AudioType.ST_MainMenu, audioFadeOut, audioPlayDelay);
         AudioController.Instance.PlayAudio(AudioType.ST_Game, audioFadeIn, audioPlayDelay);
-
     }
 
     public void SequenceGameStartSounds()

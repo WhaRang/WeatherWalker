@@ -1,0 +1,20 @@
+UX & Quality Improvements
+- Two-part breast & belly.
+- Added support for multiple inner shirt layers.
+- Polished Example Variants.
+- Added support for the body rotation from the hip, body posing is more flexible.
+- The user can now choose to load only clothes or only body shape from the character save file.
+- Polished skirt and coat simulation.
+
+Features
+- Added Arm IK.
+- Added Aging slider in CharacterEditor2D Inspector Window.
+- Added Shadow Simulation.
+- Added Sitting Simulation.
+
+Bug fixes
+- Fixed the bug where moving character causes posing to change by IK handles.
+- Fixed the bug where the sleeves don't show up.
+- Fixed the bug where the character perspective simulation is incorrect after stopping the animation preview.
+- Fixed the bug where FootIK behaves incorrectly after rotating the character body.
+- Fixed the bug where some errors appear on the editor console because of setting sprite renderer size to zero in edit mode.

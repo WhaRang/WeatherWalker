@@ -21,6 +21,7 @@ public class AudioObject: MonoBehaviour
     [SerializeField] private bool loop;
     [SerializeField] private bool playlist;
 
+    public AudioClip[] Clips => clips;
     public AudioType Type => type;
     public bool Loop => loop;
     public bool Playlist => playlist;

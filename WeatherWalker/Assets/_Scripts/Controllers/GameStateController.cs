@@ -6,26 +6,38 @@ public class GameStateController : MonoBehaviour
 
     [SerializeField] private bool log = false;
     [SerializeField] private AnimationControllerUI animationControllerUI;
+    [SerializeField] private ControlPanelUI controlPanelUI;
     [SerializeField] private AudioSequenceController audioSequenceController;
     [SerializeField] private GetInferenceFromModel getInferenceFromModel;
     [SerializeField] private BackgroundControllersSequencer backgroundControllersSequencer;
+    [SerializeField] private Animator characterAnimator;
     [SerializeField] private MusicGenre musicGenreToStart;
 
+    private const string IDLE_ANIMATION = "Idle";
+    private const string WALK_ANIMATION = "Walk";
+
     private bool isFirstTimeLaunch = true;
+
+    private int characterIdleAnimationHash;
+    private int characterWalkAnimationHash;
 
     public enum GameState
     {
         None = 0,
-        Main = 1,
-        Pause = 2
+        Start = 1,
+        Main = 2,
+        Pause = 3
     }
 
-    private GameState currentGameState = GameState.None;
+    public GameState CurrentGameState { get; private set; } = GameState.None;
 
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
+
+        characterIdleAnimationHash = Animator.StringToHash(IDLE_ANIMATION);
+        characterWalkAnimationHash = Animator.StringToHash(WALK_ANIMATION);
     }
 
     private void Start()
@@ -40,8 +52,12 @@ public class GameStateController : MonoBehaviour
 
     private void UpdateGame()
     {
-        switch (currentGameState)
+        switch (CurrentGameState)
         {
+            case GameState.Start:
+                UpdateGameStart();
+                break;
+
             case GameState.Main:
                 UpdateMainGame();
                 break;
@@ -52,10 +68,9 @@ public class GameStateController : MonoBehaviour
         }
     }
 
-    private void UpdatePausedGame()
-    {
+    private void UpdateGameStart() { }
 
-    }
+    private void UpdatePausedGame() { }
 
     private void UpdateMainGame()
     {
@@ -66,7 +81,7 @@ public class GameStateController : MonoBehaviour
 
     public void StartGame()
     {
-        currentGameState = GameState.Pause;
+        CurrentGameState = GameState.Start;
         audioSequenceController.SequenceGameStartSounds();
 
         int index = (int)musicGenreToStart;
@@ -74,15 +89,29 @@ public class GameStateController : MonoBehaviour
         backgroundControllersSequencer.ActivateControllerNeeded(index);
 
         if (log)
-            Debug.Log("Current game state: " + currentGameState);
+            Debug.Log("Current game state: " + CurrentGameState);
+    }
+
+    public void EndGame()
+    {
+        PauseGame();
+
+        CurrentGameState = GameState.Start;
+        isFirstTimeLaunch = true;
+
+        controlPanelUI.ResetMainMenuAudioImpotUI();
+
+        if (log)
+            Debug.Log("Current game state: " + CurrentGameState);
     }
 
     public void ResumeGame()
     {
-        if (currentGameState == GameState.Main)
+        if (CurrentGameState == GameState.Main)
             return;
 
-        currentGameState = GameState.Main;
+        CurrentGameState = GameState.Main;
+        characterAnimator.SetTrigger(characterWalkAnimationHash);
 
         if (isFirstTimeLaunch)
         {
@@ -96,20 +125,21 @@ public class GameStateController : MonoBehaviour
         animationControllerUI.CloseMainMenu();
 
         if (log)
-            Debug.Log("Current game state: " + currentGameState);
+            Debug.Log("Current game state: " + CurrentGameState);
     }
 
     public void PauseGame()
     {
-        if (currentGameState == GameState.Pause)
+        if (CurrentGameState == GameState.Pause)
             return;
 
-        currentGameState = GameState.Pause;
+        CurrentGameState = GameState.Pause;
+        characterAnimator.SetTrigger(characterIdleAnimationHash);
 
         audioSequenceController.SequenceGamePauseSounds();
         animationControllerUI.OpenMainMenu();
 
         if (log)
-            Debug.Log("Current game state: " + currentGameState);
+            Debug.Log("Current game state: " + CurrentGameState);
     }
 }
