@@ -10,16 +10,9 @@ public class GameStateController : MonoBehaviour
     [SerializeField] private AudioSequenceController audioSequenceController;
     [SerializeField] private GetInferenceFromModel getInferenceFromModel;
     [SerializeField] private BackgroundControllersSequencer backgroundControllersSequencer;
-    [SerializeField] private Animator characterAnimator;
     [SerializeField] private MusicGenre musicGenreToStart;
 
-    private const string IDLE_ANIMATION = "Idle";
-    private const string WALK_ANIMATION = "Walk";
-
     private bool isFirstTimeLaunch = true;
-
-    private int characterIdleAnimationHash;
-    private int characterWalkAnimationHash;
 
     public enum GameState
     {
@@ -35,9 +28,6 @@ public class GameStateController : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-
-        characterIdleAnimationHash = Animator.StringToHash(IDLE_ANIMATION);
-        characterWalkAnimationHash = Animator.StringToHash(WALK_ANIMATION);
     }
 
     private void Start()
@@ -111,7 +101,7 @@ public class GameStateController : MonoBehaviour
             return;
 
         CurrentGameState = GameState.Main;
-        characterAnimator.SetTrigger(characterWalkAnimationHash);
+        PlayerController.Instance.Walk();
 
         if (isFirstTimeLaunch)
         {
@@ -134,7 +124,7 @@ public class GameStateController : MonoBehaviour
             return;
 
         CurrentGameState = GameState.Pause;
-        characterAnimator.SetTrigger(characterIdleAnimationHash);
+        PlayerController.Instance.Idle();
 
         audioSequenceController.SequenceGamePauseSounds();
         animationControllerUI.OpenMainMenu();
