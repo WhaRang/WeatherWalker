@@ -10,9 +10,11 @@ public class GameStateController : MonoBehaviour
     [SerializeField] private AudioSequenceController audioSequenceController;
     [SerializeField] private GetInferenceFromModel getInferenceFromModel;
     [SerializeField] private BackgroundControllersSequencer backgroundControllersSequencer;
+    [SerializeField] private TimedClickSpawner timedClickSpawner;
     [SerializeField] private MusicGenre musicGenreToStart;
 
     private bool isFirstTimeLaunch = true;
+    private int musciGenreIndex = 0;
 
     public enum GameState
     {
@@ -64,9 +66,8 @@ public class GameStateController : MonoBehaviour
 
     private void UpdateMainGame()
     {
-        int index = (int)musicGenreToStart;
-        index--;
-        backgroundControllersSequencer.UpdateControllersSequencer(index);
+        backgroundControllersSequencer.UpdateControllersSequencer(musciGenreIndex);
+        timedClickSpawner.UpdateSpawner();
     }
 
     public void StartGame()
@@ -74,9 +75,9 @@ public class GameStateController : MonoBehaviour
         CurrentGameState = GameState.Start;
         audioSequenceController.SequenceGameStartSounds();
 
-        int index = (int)musicGenreToStart;
-        index--;
-        backgroundControllersSequencer.ActivateControllerNeeded(index);
+        musciGenreIndex = (int)musicGenreToStart;
+        musciGenreIndex--;
+        backgroundControllersSequencer.ActivateControllerNeeded(musciGenreIndex);
 
         if (log)
             Debug.Log("Current game state: " + CurrentGameState);
@@ -124,8 +125,10 @@ public class GameStateController : MonoBehaviour
             return;
 
         CurrentGameState = GameState.Pause;
+
         PlayerController.Instance.Idle();
 
+        timedClickSpawner.DestroyAllClicksFadeOut();
         audioSequenceController.SequenceGamePauseSounds();
         animationControllerUI.OpenMainMenu();
 
