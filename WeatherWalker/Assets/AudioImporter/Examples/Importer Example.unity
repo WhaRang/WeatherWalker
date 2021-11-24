@@ -640,10 +640,6 @@ PrefabInstance:
       propertyPath: m_ScrollSensitivity
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114704613031391872, guid: 8c4ec9e65d4961640ad6dd301faacfb5, type: 3}
-      propertyPath: extensions.Array.data[1]
-      value: .mp3
-      objectReference: {fileID: 0}
     - target: {fileID: 224148857673558642, guid: 8c4ec9e65d4961640ad6dd301faacfb5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -714,11 +710,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224396253005531800, guid: 8c4ec9e65d4961640ad6dd301faacfb5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 224396253005531800, guid: 8c4ec9e65d4961640ad6dd301faacfb5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 224396253005531800, guid: 8c4ec9e65d4961640ad6dd301faacfb5, type: 3}
       propertyPath: m_LocalPosition.x
