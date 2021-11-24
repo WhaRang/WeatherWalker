@@ -75,9 +75,9 @@ public class MovingAnimations : MonoBehaviour
         SmoothScaling(obj, startScale, seconds / 2);
     }
 
-    public void SmoothScaling(GameObject obj, Vector3 newScale, float seconds)
+    public Coroutine SmoothScaling(GameObject obj, Vector3 newScale, float seconds)
     {
-        StartCoroutine(SmoothScaleChanging(obj, newScale, seconds));
+        return StartCoroutine(SmoothScaleChanging(obj, newScale, seconds));
     }
 
     private IEnumerator SmoothScaleChanging(GameObject obj, Vector3 newScale, float seconds)
@@ -94,5 +94,10 @@ public class MovingAnimations : MonoBehaviour
             obj.transform.localScale = Vector3.Lerp(oldScale, newScale, Mathf.SmoothStep(0f, 1f, t));
             yield return null;
         }
+    }
+
+    public void StopAnimation(Coroutine routine)
+    {
+        StopCoroutine(routine);
     }
 }
