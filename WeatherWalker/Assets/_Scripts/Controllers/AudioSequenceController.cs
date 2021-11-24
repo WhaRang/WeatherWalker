@@ -48,13 +48,20 @@ public class AudioSequenceController : MonoBehaviour
         ResumeAudioNeeded();
 
         AudioController.Instance.PauseAudio(AudioType.ST_MainMenu, audioFadeOut, audioPlayDelay);
-        AudioController.Instance.ResumeAudio(AudioType.ST_Game, audioFadeIn, audioPlayDelay);
+
+        if (!MainMenuBusController.IsGameAudioChanged)
+            AudioController.Instance.ResumeAudio(AudioType.ST_Game, audioFadeIn, audioPlayDelay);
+        else
+            AudioController.Instance.PlayAudio(AudioType.ST_Game, audioFadeIn, audioPlayDelay);
+
+        MainMenuBusController.IsGameAudioChanged = false;
     }
 
     public void SequenceFirstTimeLaunchSounds()
     {
         AudioController.Instance.PauseAudio(AudioType.ST_MainMenu, audioFadeOut, audioPlayDelay);
         AudioController.Instance.PlayAudio(AudioType.ST_Game, audioFadeIn, audioPlayDelay);
+        MainMenuBusController.IsGameAudioChanged = false;
     }
 
     public void SequenceGameStartSounds()

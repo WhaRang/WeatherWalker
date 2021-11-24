@@ -6,7 +6,7 @@ public class CharacterUIHolder : MonoBehaviour
 
     private void Awake()
     {
-        character.gameObject.SetActive(true);
+        ActivateCharacter();
     }
 
     private void Start()
@@ -18,5 +18,15 @@ public class CharacterUIHolder : MonoBehaviour
     {
         Vector3 worldPos = transform.TransformPoint(Vector3.zero);
         character.transform.position = worldPos;
+    }
+
+    public void ActivateCharacter()
+    {
+        character.gameObject.SetActive(true);
+    }
+
+    public void DeactivateCharacter()
+    {
+        character.gameObject.SetActive(false);
     }
 }

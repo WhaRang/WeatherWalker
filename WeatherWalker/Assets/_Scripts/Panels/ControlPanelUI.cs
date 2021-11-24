@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ControlPanelUI : MonoBehaviour
 {
-    [SerializeField] private PathAudioImporter audioImporter;
+    [SerializeField] private BrowserAudioImporter browserAudioImporter;
     [SerializeField] private Text audioImportLoadingBarText;
     [SerializeField] private Image audioImportLoadingBar;
 
@@ -18,12 +18,12 @@ public class ControlPanelUI : MonoBehaviour
             audioImportLoadingBarText.text = MainMenuBusController.NO_AUDIO_IMPORTED;
         else if (!MainMenuBusController.IsGameAudioLoaded)
         {
-            audioImportLoadingBarText.text = audioImporter.Progress * 100 + " %";
-            audioImportLoadingBar.fillAmount = audioImporter.Progress;
+            audioImportLoadingBarText.text = browserAudioImporter.Progress * 100 + " %";
+            audioImportLoadingBar.fillAmount = browserAudioImporter.Progress;
         }
         else
         {
-            audioImportLoadingBarText.text = MainMenuBusController.AUDIO_IMPORTED + audioImporter.ClipName;
+            audioImportLoadingBarText.text = MainMenuBusController.AUDIO_IMPORTED + browserAudioImporter.ClipName;
             audioImportLoadingBar.fillAmount = 1.0f;
         }
     }
@@ -52,7 +52,7 @@ public class ControlPanelUI : MonoBehaviour
     public void MainMenuImportAudioButtonOnClick()
     {
         ResetMainMenuAudioImpotUI();
-        audioImporter.Import();
+        browserAudioImporter.OpenBrowser();
     }
 
     public void GamePauseButtonOnClick()
