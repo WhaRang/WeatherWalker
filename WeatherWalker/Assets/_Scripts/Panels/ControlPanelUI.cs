@@ -59,4 +59,9 @@ public class ControlPanelUI : MonoBehaviour
     {
         GameStateController.Instance.PauseGame();
     }
+
+    public void CancelBrowserButtonOnClick()
+    {
+        browserAudioImporter.CloseBrowser();
+    }
 }
