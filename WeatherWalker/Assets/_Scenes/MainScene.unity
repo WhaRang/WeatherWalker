@@ -9122,6 +9122,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 635.35156
       objectReference: {fileID: 0}
+    - target: {fileID: 2757152487573537828, guid: 6372a7b958204f643b1c4b04eb4eba8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 855892445}
+    - target: {fileID: 2757152487573537828, guid: 6372a7b958204f643b1c4b04eb4eba8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CancelBrowserButtonOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757152487573537828, guid: 6372a7b958204f643b1c4b04eb4eba8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ControlPanelUI, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2757152487573537830, guid: 6372a7b958204f643b1c4b04eb4eba8a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
